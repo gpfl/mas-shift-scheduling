@@ -1,0 +1,129 @@
+mas tp_cnp {
+
+    agent manager: initiator.asl {
+    	beliefs: desiredWeekdays(["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]),
+    	expectedRoles([["Sales", 4], ["Cashier", 1], ["Stock", 1]]),
+    	expectedShifts(["Day Shift", "Night Shift"])
+    	
+    }
+    
+    agent controller: controller.asl {
+    	beliefs: expectedDones(14)
+    }
+    
+    agent seller1: participant.asl {
+    	beliefs: role("Sales"), weekdays([["Tuesday","Day Shift"],["Wednesday","Day Shift"],["Friday","Day Shift"],["Saturday","Day Shift"]])
+    }
+    
+    agent seller2: participant.asl {
+    	beliefs: role("Sales"), weekdays([["Tuesday","Day Shift"],["Friday","Day Shift"],["Saturday","Day Shift"]])
+    }
+
+    agent seller3: participant.asl {
+    	beliefs: role("Sales"), weekdays([["Thursday","Day Shift"],["Friday","Day Shift"],["Saturday","Day Shift"]])
+    }
+    
+    agent seller4: participant.asl {
+    	beliefs: role("Sales"), weekdays([["Tuesday","Day Shift"],["Thursday","Day Shift"],["Friday","Day Shift"],["Saturday","Day Shift"]])
+    }
+    
+    agent seller5: participant.asl {
+    	beliefs: role("Sales"), weekdays([["Monday","Day Shift"],["Wednesday","Day Shift"],["Sunday","Day Shift"]])
+    }
+    
+    agent seller6: participant.asl {
+    	beliefs: role("Sales"), weekdays([["Monday","Day Shift"],["Tuesday","Day Shift"],["Wednesday","Day Shift"],["Sunday","Day Shift"]])
+    }
+
+    agent seller7: participant.asl {
+    	beliefs: role("Sales"), weekdays([["Monday","Day Shift"],["Thursday","Day Shift"],["Sunday","Day Shift"]])
+    }
+    
+    agent seller8: participant.asl {
+    	beliefs: role("Sales"), weekdays([["Monday","Day Shift"],["Wednesday","Day Shift"],["Sunday","Day Shift"]])
+    }
+    
+    agent seller9: participant.asl {
+    	beliefs: role("Sales"), weekdays([["Wednesday","Night Shift"],["Friday","Night Shift"],["Saturday","Night Shift"]])
+    }
+    
+    agent seller10: participant.asl {
+    	beliefs: role("Sales"), weekdays([["Thursday","Night Shift"],["Friday","Night Shift"],["Saturday","Night Shift"]])
+    }
+
+    agent seller11: participant.asl {
+    	beliefs: role("Sales"), weekdays([["Tuesday","Night Shift"],["Thursday","Night Shift"],["Friday","Night Shift"],["Saturday","Night Shift"]])
+    }
+    
+    agent seller12: participant.asl {
+    	beliefs: role("Sales"), weekdays([["Tuesday","Night Shift"],["Wednesday","Night Shift"],["Thursday","Night Shift"],["Friday","Night Shift"],["Saturday","Night Shift"]])
+    }
+    
+    agent seller13: participant.asl {
+    	beliefs: role("Sales"), weekdays([["Monday","Night Shift"],["Tuesday","Night Shift"],["Thursday","Night Shift"],["Sunday","Night Shift"]])
+    }
+    
+    agent seller14: participant.asl {
+    	beliefs: role("Sales"), weekdays([["Monday","Night Shift"],["Tuesday","Night Shift"],["Sunday","Night Shift"]])
+    }
+
+    agent seller15: participant.asl {
+    	beliefs: role("Sales"), weekdays([["Monday","Night Shift"],["Wednesday","Night Shift"],["Sunday","Night Shift"]])
+    }
+    
+    agent seller16: participant.asl {
+    	beliefs: role("Sales"), weekdays([["Monday","Night Shift"],["Wednesday","Night Shift"],["Sunday","Night Shift"]])
+    }
+    
+    agent cashier1: participant.asl {
+    	beliefs: role("Cashier"), weekdays([["Tuesday","Day Shift"],["Wednesday","Day Shift"],["Thursday","Day Shift"],["Friday","Day Shift"],["Saturday","Day Shift"]])
+    }
+
+    agent cashier2: participant.asl {
+    	beliefs: role("Cashier"), weekdays([["Monday","Day Shift"],["Tuesday","Day Shift"],["Wednesday","Day Shift"],["Thursday","Day Shift"],["Sunday","Day Shift"]])
+    }
+    
+    agent cashier3: participant.asl {
+    	beliefs: role("Cashier"), weekdays([["Thursday","Night Shift"],["Friday","Night Shift"],["Saturday","Night Shift"]])
+    }
+
+    agent cashier4: participant.asl {
+    	beliefs: role("Stock"), weekdays([["Monday","Night Shift"],["Thursday","Night Shift"],["Sunday","Night Shift"]])
+    }
+    
+    agent cashier5: participant.asl {
+    	beliefs: role("Cashier"), weekdays([["Tuesday","Day Shift"],["Wednesday","Day Shift"],["Thursday","Day Shift"],["Friday","Day Shift"],["Saturday","Day Shift"]])
+    }
+
+    agent cashier6: participant.asl {
+    	beliefs: role("Cashier"), weekdays([["Monday","Day Shift"],["Tuesday","Day Shift"],["Wednesday","Day Shift"],["Thursday","Day Shift"],["Sunday","Day Shift"]])
+    }
+    
+    agent cashier7: participant.asl {
+    	beliefs: role("Cashier"), weekdays([["Tuesday","Night Shift"],["Wednesday","Night Shift"],["Friday","Night Shift"],["Saturday","Night Shift"]])
+    }
+
+    agent cashier8: participant.asl {
+    	beliefs: role("Stock"), weekdays([["Monday","Night Shift"],["Tuesday","Night Shift"],["Wednesday","Night Shift"],["Sunday","Night Shift"]])
+    }
+
+    agent stock1: participant.asl {
+    	beliefs: role("Stock"), weekdays([["Wednesday","Day Shift"],["Thursday","Day Shift"],["Friday","Day Shift"],["Saturday","Day Shift"]])
+    }
+
+    agent stock2: participant.asl {
+    	beliefs: role("Stock"), weekdays([["Monday","Day Shift"],["Tuesday","Day Shift"],["Thursday","Day Shift"],["Sunday","Day Shift"]])
+    }
+    
+    agent stock3: participant.asl {
+    	beliefs: role("Stock"), weekdays([["Monday","Night Shift"],["Tuesday","Night Shift"],["Wednesday","Night Shift"],["Thursday","Night Shift"],["Friday","Night Shift"],["Saturday","Night Shift"],["Sunday","Night Shift"]])
+    }
+
+    agent stock4: participant.asl {
+    	beliefs: role("Stock"), weekdays([["Monday","Night Shift"],["Tuesday","Night Shift"],["Wednesday","Night Shift"],["Thursday","Night Shift"],["Sunday","Night Shift"]])
+    }
+
+    
+    asl-path: src/asl
+
+}
